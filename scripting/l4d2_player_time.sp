@@ -7,7 +7,7 @@
 #define HOST_PATH					"http://api.steampowered.com"
 #define TOTAL_PLAYTIME_URL			"IPlayerService/GetOwnedGames/v1/?format=json&appids_filter[0]=550"
 #define REAL_PLAYTIME_URL			"ISteamUserStats/GetUserStatsForGame/v2/?appid=550"
-#define VALVEKEY					"C7B3FC46E6E6D5C87700963F0688FCB4"
+#define VALVEKEY					"5629C39F702792D48A0CF81BE67DB657"
 
 enum struct PlayerStruct {
 	int totalplaytime;
