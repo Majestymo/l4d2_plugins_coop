@@ -3,11 +3,12 @@
 #include <sourcemod>
 #include <ripext>
 #include <colors>
+#include <hextags>
 
 #define HOST_PATH					"http://api.steampowered.com"
 #define TOTAL_PLAYTIME_URL			"IPlayerService/GetOwnedGames/v1/?format=json&appids_filter[0]=550"
 #define REAL_PLAYTIME_URL			"ISteamUserStats/GetUserStatsForGame/v2/?appid=550"
-#define VALVEKEY					"5629C39F702792D48A0CF81BE67DB657"
+#define VALVEKEY					"C7B3FC46E6E6D5C87700963F0688FCB4"
 
 enum struct PlayerStruct {
 	int totalplaytime;
@@ -22,7 +23,7 @@ public Plugin myinfo =
 	name = "[L4D2]时长检测",
 	author = "奈",
 	description = "display time",
-	version = "1.4",
+	version = "1.4.c",
 	url = "https://github.com/NanakaNeko/l4d2_plugins_coop"
 };
 
@@ -83,6 +84,7 @@ public Action announcetime(Handle timer, int client)
 	{
 		DisplayTime(client);
 		player[client].Displayed = true;
+		HexTags_ResetClientTag(client);
 	}
 	return Plugin_Continue;
 }
